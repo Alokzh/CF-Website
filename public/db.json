@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "problemStatement": "Brick Wall",
+        "problemLink": "https://codeforces.com/contest/1918/problem/A",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1918A.cpp",
+        "rating": 800
+    },
+    {
+        "id": 2,
+        "problemStatement": "Minimize Inversions",
+        "problemLink": "https://codeforces.com/contest/1918/problem/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1918B.cpp",
+        "rating": 900
+    },
+    {
+        "id": 3,
+        "problemStatement": "Swap and Delete",
+        "problemLink": "https://codeforces.com/contest/1913/problem/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1913B.cpp",
+        "rating": 1000
+    }
+]

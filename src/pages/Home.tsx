@@ -11,6 +11,11 @@ interface Problem {
 const Home: React.FC = () => {
     const [problems, setProblems] = useState<Problem[]>([]);
     const [solvedProblems, setSolvedProblems] = useState<number[]>([]);
+    const [minRating, setMinRating] = useState<number>();
+    const [maxRating, setMaxrating] = useState<number>();
+    const [filterApllied, setFilterApplied] = useState<boolean>(false);
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const problemsPerPage: number = 20;
 
     useEffect(() => {
         const savedSolvedProblems = localStorage.getItem("solvedProblems");
@@ -46,12 +51,75 @@ const Home: React.FC = () => {
         }
     };
 
+    const handleminRating = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setMinRating(parseInt(event.target.value));
+    };
+
+    const handlemaxRating = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setMaxrating(parseInt(event.target.value));
+    };
+
+    const applyFilter = () => {
+        setFilterApplied(true);
+        setCurrentPage(1);
+    };
+
+    const resetFilter = () => {
+        setMinRating(undefined);
+        setMaxrating(undefined);
+        setFilterApplied(false);
+        setCurrentPage(1);
+        window.location.reload();
+    };
+
+    const startIdx = (currentPage - 1) * problemsPerPage;
+    const endIdx = currentPage * problemsPerPage;
+
+    let filteredProblems: Problem[] = problems;
+
+    if (
+        filterApllied &&
+        typeof minRating === "number" &&
+        typeof maxRating === "number"
+    ) {
+        filteredProblems = problems.filter(
+            (problem) =>
+                problem.rating >= minRating && problem.rating <= maxRating
+        );
+    }
+
+    const displayedProblems = filteredProblems.slice(startIdx, endIdx);
+
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+        window.scrollTo(0, 0);
+    };
+
     return (
         <div className="container">
             <p style={{ marginLeft: "38px" }}>
                 <strong>Tip:</strong> Going to solution without attempting the
                 question is waste of your time
             </p>
+            <br />
+            <div style={{marginLeft:"38px"}}>
+                <label>
+                    <strong> Difficulty:</strong>
+                    <input
+                        type="number"
+                        value={minRating}
+                        onChange={handleminRating}
+                    />
+                    -
+                    <input
+                        type="number"
+                        value={maxRating}
+                        onChange={handlemaxRating}
+                    />
+                </label>
+                <button onClick={applyFilter}>Apply</button>
+                <button onClick={resetFilter}>Reset</button>
+            </div>
             <br />
             <table className="table">
                 <thead>
@@ -64,9 +132,18 @@ const Home: React.FC = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {problems.map((problem, index) => (
-                        <tr key={problem.id}>
-                            <td>{index + 1}.</td>
+                    {displayedProblems.map((problem, index) => (
+                        <tr
+                            key={problem.id}
+                            style={{
+                                backgroundColor: solvedProblems.includes(
+                                    problem.id
+                                )
+                                    ? "lightgreen"
+                                    : "",
+                            }}
+                        >
+                            <td>{startIdx + index + 1}.</td>
                             <td>
                                 <a
                                     href={problem.problemLink}
@@ -75,7 +152,7 @@ const Home: React.FC = () => {
                                         color: "blue",
                                     }}
                                 >
-                                    {problem.problemStatement}
+                                {problem.problemStatement}
                                 </a>
                             </td>
                             <td>
@@ -96,13 +173,29 @@ const Home: React.FC = () => {
                                     checked={solvedProblems.includes(
                                         problem.id
                                     )}
-                                    onChange={() => handleCheckbox(problem.id)}
+                                    onChange={() => {
+                                        handleCheckbox(problem.id);
+                                    }}
                                 />
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+            <div className="pagination-btn">
+                <button
+                    disabled={currentPage === 1}
+                    onClick={() => handlePageChange(currentPage - 1)}
+                >
+                    Previous
+                </button>
+                <button
+                    disabled={displayedProblems.length < problemsPerPage}
+                    onClick={() => handlePageChange(currentPage + 1)}
+                >
+                    Next
+                </button>
+            </div>
         </div>
     );
 };

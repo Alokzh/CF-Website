@@ -29,6 +29,16 @@ body {
   width: 100%;
 }
 
+.navbar .logo {
+  margin-left: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  color: #333;
+  cursor: pointer;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
 .navbar .links {
   color: #333;
   cursor: pointer;
@@ -78,4 +88,24 @@ body {
   padding: 1px;
   width: 100%;
   bottom: 0;
+}
+
+button {
+  margin: 2px;
+  padding: auto;
+}
+
+input {
+  width: 60px;
+  padding: 1px;
+  margin-right: 2px;
+}
+
+.pagination-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding: auto;
+  margin-bottom: 100px;
 }

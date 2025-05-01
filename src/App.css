@@ -54,6 +54,22 @@ body {
   padding-top: 12px;
 }
 
+.navbar .logo,
+.navbar .links,
+.navbar .github-icon {
+  transition: transform 0.3s ease;
+}
+
+.navbar .logo:hover,
+.navbar .github-icon:hover {
+  transform: translateY(-2px);
+}
+
+.navbar .links:hover {
+  transform: translateY(-2px);
+  color: #007aff;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -84,6 +100,19 @@ body {
   padding: 8px;
   text-align: center;
   border: 1px solid #b7b2b2;
+}
+
+.resource-page {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+  margin-left: 40px;
+}
+
+.resource-page a {
+  text-decoration: none;
+  color: red;
 }
 
 .footer {

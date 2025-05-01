@@ -148,13 +148,79 @@ input {
 
 @media screen and (max-width: 768px) {
   .navbar .logo {
-      margin-left: 4px;
+    margin-left: 4px;
   }
 
   .navbar .links {
-      margin-left: 18px;
+    margin-left: 18px;
   }
   .footer {
-      min-width: 420px;
+    min-width: 420px;
   }
+}
+
+.progress-dashboard {
+  background: rgb(243, 248, 255);
+  margin: 0 38px 20px 38px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-dashboard h2 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.stat-box {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  background: white;
+  margin: 0 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.stat-box:first-child {
+  margin-left: 0;
+}
+
+.stat-box:last-child {
+  margin-right: 0;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 12px;
+  background: #e9ecef;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #51cf66, #339af0);
+  border-radius: 6px;
+  transition: width 0.3s ease;
 }

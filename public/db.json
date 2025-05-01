@@ -19,5 +19,250 @@
         "problemLink": "https://codeforces.com/contest/1913/problem/B",
         "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1913B.cpp",
         "rating": 1000
+    },
+    {
+        "id": 4,
+        "problemStatement": "Raspberries",
+        "problemLink": "https://codeforces.com/contest/1883/problem/C",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1883C.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 5,
+        "problemStatement": "Game with Integers",
+        "problemLink": "https://codeforces.com/problemset/problem/1899/A",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1899A.cpp",
+        "rating": 800
+    },
+    {
+        "id": 6,
+        "problemStatement": "Helmets in Night Light",
+        "problemLink": "https://codeforces.com/contest/1876/problem/A",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1876A.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 7,
+        "problemStatement": "Olya and Game with Arrays",
+        "problemLink": "https://codeforces.com/contest/1859/problem/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1859B.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 8,
+        "problemStatement": "Make it White",
+        "problemLink": "https://codeforces.com/contest/1927/problem/A",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1927A.cpp",
+        "rating": 800
+    },
+    {
+        "id": 9,
+        "problemStatement": "Monsters",
+        "problemLink": "https://codeforces.com/contest/1849/problem/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1849B.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 10,
+        "problemStatement": "Ski Resort",
+        "problemLink": "https://codeforces.com/contest/1840/problem/C",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1840C.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 11,
+        "problemStatement": "Cover in Water",
+        "problemLink": "https://codeforces.com/problemset/problem/1900/A",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1900A.cpp",
+        "rating": 800
+    },
+    {
+        "id": 12,
+        "problemStatement": "Array merging",
+        "problemLink": "https://codeforces.com/contest/1831/problem/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1831B.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 13,
+        "problemStatement": "Distinct Split",
+        "problemLink": "https://codeforces.com/contest/1791/problem/D",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1791D.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 14,
+        "problemStatement": "Minimum LCM",
+        "problemLink": "https://codeforces.com/contest/1765/problem/M",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1765M.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 15,
+        "problemStatement": "Traffic Light",
+        "problemLink": "https://codeforces.com/contest/1744/problem/C",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1744C.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 16,
+        "problemStatement": "Basketball Together",
+        "problemLink": "https://codeforces.com/contest/1725/problem/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1725B.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 17,
+        "problemStatement": "Halloumi Boxes",
+        "problemLink": "https://codeforces.com/contest/1903/problem/A",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1903A.cpp",
+        "rating": 800
+    },
+    {
+        "id": 18,
+        "problemStatement": "Line Trip",
+        "problemLink": "https://codeforces.com/problemset/problem/1901/A",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1901A.cpp",
+        "rating": 800
+    },
+    {
+        "id": 19,
+        "problemStatement": "Deja Vu",
+        "problemLink": "https://codeforces.com/problemset/problem/1891/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1891B.cpp",
+        "rating": 1100
+    },
+    {
+        "id": 20,
+        "problemStatement": "250 Thousand Tons of TNT",
+        "problemLink": "https://codeforces.com/problemset/problem/1899/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1899B.cpp",
+        "rating": 1100
+    },
+    {
+        "id": 21,
+        "problemStatement": "Yarik and Array",
+        "problemLink": "https://codeforces.com/problemset/problem/1899/C",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1899C.cpp",
+        "rating": 1100
+    },
+    {
+        "id": 22,
+        "problemStatement": "Collecting Game",
+        "problemLink": "https://codeforces.com/problemset/problem/1904/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1904B.cpp",
+        "rating": 1100
+    },
+    {
+        "id": 23,
+        "problemStatement": "Quests",
+        "problemLink": "https://codeforces.com/problemset/problem/1914/C",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1914C.cpp",
+        "rating": 1100
+    },
+    {
+        "id": 24,
+        "problemStatement": "Erase First or Second Letter",
+        "problemLink": "https://codeforces.com/problemset/problem/1917/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1917B.cpp",
+        "rating": 1100
+    },
+    {
+        "id": 25,
+        "problemStatement": "Black and White Stripe",
+        "problemLink": "https://codeforces.com/problemset/problem/1690/D",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1690D.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 26,
+        "problemStatement": "Shoe Shuffling",
+        "problemLink": "https://codeforces.com/problemset/problem/1691/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1691B.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 27,
+        "problemStatement": "Luke is a Foodie",
+        "problemLink": "https://codeforces.com/problemset/problem/1704/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1704B.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 28,
+        "problemStatement": "Beautiful Array",
+        "problemLink": "https://codeforces.com/problemset/problem/1715/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1715B.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 29,
+        "problemStatement": "Following the String",
+        "problemLink": "https://codeforces.com/contest/1927/problem/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1927B.cpp",
+        "rating": 900
+    },
+    {
+        "id": 30,
+        "problemStatement": "Choose the Different Ones!",
+        "problemLink": "https://codeforces.com/contest/1927/problem/C",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1927C.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 31,
+        "problemStatement": "Find the Different Ones!",
+        "problemLink": "https://codeforces.com/contest/1927/problem/D",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1927D.cpp",
+        "rating": 1300
+    },
+    {
+        "id": 32,
+        "problemStatement": "Rectangle Cutting",
+        "problemLink": "https://codeforces.com/contest/1928/problem/A",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1928A.cpp",
+        "rating": 800
+    },
+    {
+        "id": 33,
+        "problemStatement": "Recovering a Small String",
+        "problemLink": "https://codeforces.com/contest/1931/problem/A",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1931A.cpp",
+        "rating": 800
+    },
+    {
+        "id": 34,
+        "problemStatement": "Make Equal",
+        "problemLink": "https://codeforces.com/contest/1931/problem/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1931B.cpp",
+        "rating": 800
+    },
+    {
+        "id": 35,
+        "problemStatement": "Make Equal Again",
+        "problemLink": "https://codeforces.com/contest/1931/problem/C",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1931C.cpp",
+        "rating": 1000
+    },
+    {
+        "id": 36,
+        "problemStatement": "Divisible Pairs",
+        "problemLink": "https://codeforces.com/contest/1931/problem/D",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1931D.cpp",
+        "rating": 1300
+    },
+    {
+        "id": 37,
+        "problemStatement": "Sasha and the Beautiful Array",
+        "problemLink": "https://codeforces.com/contest/1929/problem/A",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1929A.cpp",
+        "rating": 800
+    },
+    {
+        "id": 38,
+        "problemStatement": "Sasha and the Drawing",
+        "problemLink": "https://codeforces.com/contest/1929/problem/B",
+        "solutionLink": "https://github.com/Alokzh/CF-Solutions/blob/main/1929B.cpp",
+        "rating": 800
     }
 ]

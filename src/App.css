@@ -145,3 +145,16 @@ input {
   padding: auto;
   margin-bottom: 100px;
 }
+
+@media screen and (max-width: 768px) {
+  .navbar .logo {
+      margin-left: 4px;
+  }
+
+  .navbar .links {
+      margin-left: 18px;
+  }
+  .footer {
+      min-width: 420px;
+  }
+}

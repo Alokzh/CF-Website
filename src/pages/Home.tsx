@@ -11,9 +11,9 @@ interface Problem {
 const Home: React.FC = () => {
   const [problems, setProblems] = useState<Problem[]>([]);
   const [solvedProblems, setSolvedProblems] = useState<number[]>([]);
-  const [minRating, setMinRating] = useState<number>();
-  const [maxRating, setMaxrating] = useState<number>();
-  const [filterApllied, setFilterApplied] = useState<boolean>(false);
+  const [minRating, setMinRating] = useState<number | undefined>();
+  const [maxRating, setMaxRating] = useState<number | undefined>();
+  const [filterApplied, setFilterApplied] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [progressStats, setProgressStats] = useState({
     total: 0,
@@ -73,12 +73,12 @@ const Home: React.FC = () => {
     updateProgressStats(problems, updatedSolvedProblems);
   };
 
-  const handleminRating = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setMinRating(parseInt(event.target.value));
+  const handleMinRating = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setMinRating(parseInt(event.target.value) || undefined);
   };
 
-  const handlemaxRating = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setMaxrating(parseInt(event.target.value));
+  const handleMaxRating = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setMaxRating(parseInt(event.target.value) || undefined);
   };
 
   const applyFilter = () => {
@@ -88,10 +88,9 @@ const Home: React.FC = () => {
 
   const resetFilter = () => {
     setMinRating(undefined);
-    setMaxrating(undefined);
+    setMaxRating(undefined);
     setFilterApplied(false);
     setCurrentPage(1);
-    window.location.reload();
   };
 
   const startIdx = (currentPage - 1) * problemsPerPage;
@@ -100,7 +99,7 @@ const Home: React.FC = () => {
   let filteredProblems: Problem[] = problems;
 
   if (
-    filterApllied &&
+    filterApplied &&
     typeof minRating === "number" &&
     typeof maxRating === "number"
   ) {
@@ -142,79 +141,93 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <p style={{ marginLeft: "38px" }}>
-        <strong>Tip:</strong> Going to solution without attempting the question
-        is waste of your time
-      </p>
-      <br />
-      <div style={{ marginLeft: "38px" }}>
-        <label>
-          <strong> Difficulty:</strong>
-          <input type="number" value={minRating} onChange={handleminRating} />
-          -
-          <input type="number" value={maxRating} onChange={handlemaxRating} />
-        </label>
-        <button onClick={applyFilter}>Apply</button>
-        <button onClick={resetFilter}>Reset</button>
+      <div className="tip-filter-section">
+        <p>
+          <strong>Tip:</strong> Going to solution without attempting the
+          question is waste of your time
+        </p>
+        <div>
+          <label>
+            <strong> Difficulty:</strong>
+            <input
+              type="number"
+              value={minRating === undefined ? "" : minRating}
+              onChange={handleMinRating}
+              placeholder="Min"
+            />
+            -
+            <input
+              type="number"
+              value={maxRating === undefined ? "" : maxRating}
+              onChange={handleMaxRating}
+              placeholder="Max"
+            />
+          </label>
+          <button onClick={applyFilter}>Apply</button>
+          <button onClick={resetFilter}>Reset</button>
+        </div>
       </div>
-      <br />
-      <table className="table">
-        <thead>
-          <tr>
-            <th>S.No.</th>
-            <th>Problems</th>
-            <th>Solution</th>
-            <th>Rating</th>
-            <th>Solved</th>
-          </tr>
-        </thead>
-        <tbody>
-          {displayedProblems.map((problem, index) => (
-            <tr
-              key={problem.id}
-              style={{
-                backgroundColor: solvedProblems.includes(problem.id)
-                  ? "lightgreen"
-                  : "",
-              }}
-            >
-              <td>{startIdx + index + 1}.</td>
-              <td>
-                <a
-                  href={problem.problemLink}
-                  style={{
-                    textDecoration: "none",
-                    color: "blue",
-                  }}
-                >
-                  {problem.problemStatement}
-                </a>
-              </td>
-              <td>
-                <a
-                  href={problem.solutionLink}
-                  style={{
-                    textDecoration: "none",
-                    color: "blue",
-                  }}
-                >
-                  Solution
-                </a>
-              </td>
-              <td>{problem.rating}</td>
-              <td>
-                <input
-                  type="checkbox"
-                  checked={solvedProblems.includes(problem.id)}
-                  onChange={() => {
-                    handleCheckbox(problem.id);
-                  }}
-                />
-              </td>
+
+      <div className="table-responsive">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>S.No.</th>
+              <th>Problems</th>
+              <th>Solution</th>
+              <th>Rating</th>
+              <th>Solved</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {displayedProblems.map((problem, index) => (
+              <tr
+                key={problem.id}
+                style={{
+                  backgroundColor: solvedProblems.includes(problem.id)
+                    ? "lightgreen"
+                    : "",
+                }}
+              >
+                <td>{startIdx + index + 1}.</td>
+                <td>
+                  <a
+                    href={problem.problemLink}
+                    style={{
+                      textDecoration: "none",
+                      color: "blue",
+                    }}
+                  >
+                    {problem.problemStatement}
+                  </a>
+                </td>
+                <td>
+                  <a
+                    href={problem.solutionLink}
+                    style={{
+                      textDecoration: "none",
+                      color: "blue",
+                    }}
+                  >
+                    Solution
+                  </a>
+                </td>
+                <td>{problem.rating}</td>
+                <td>
+                  <input
+                    type="checkbox"
+                    checked={solvedProblems.includes(problem.id)}
+                    onChange={() => {
+                      handleCheckbox(problem.id);
+                    }}
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
       <div className="pagination-btn">
         <button
           disabled={currentPage === 1}

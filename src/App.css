@@ -16,21 +16,19 @@ body {
 
 .navbar {
   background: rgb(243, 248, 255);
-  max-width: 100%;
+  width: 100%;
   height: 60px;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  text-decoration: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: fixed;
   z-index: 1000;
-  width: 100%;
+  box-sizing: border-box;
 }
 
 .navbar .logo {
-  margin-left: 20px;
   font-style: normal;
   font-weight: 700;
   font-size: 26px;
@@ -45,12 +43,12 @@ body {
   font-size: 17px;
   margin-left: auto;
   margin-right: 100px;
+  white-space: nowrap;
 }
 
 .navbar .github-icon {
   cursor: pointer;
   font-size: 24px;
-  margin-right: 80px;
   padding-top: 12px;
 }
 
@@ -73,33 +71,47 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 80px);
   flex: 1;
   position: relative;
   z-index: 1;
-  padding-top: 100px;
-  margin-bottom: 10px;
+  padding-top: 70px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.progress-dashboard,
+.tip-filter-section,
+.table-responsive {
+    margin-left: 20px;
+    margin-right: 20px;
+    box-sizing: border-box;
+    width: auto;
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-.table th {
-  color: rgb(29, 28, 28);
-  padding: 10px;
-  font-size: 16px;
-  text-align: center;
-  font-weight: 600;
-  border: 1px solid #b7b2b2;
-  background-color: rgb(215, 233, 250);
-}
-
+.table th,
 .table td {
   padding: 8px;
   text-align: center;
   border: 1px solid #b7b2b2;
+}
+
+.table th {
+  color: rgb(29, 28, 28);
+  font-size: 16px;
+  font-weight: 600;
+  background-color: rgb(215, 233, 250);
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .resource-page {
@@ -117,24 +129,33 @@ body {
 
 .footer {
   background: rgb(243, 248, 255);
-  max-width: 100%;
-  text-decoration: none;
+  width: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   text-align: center;
-  padding: 1px;
-  width: 100%;
-  bottom: 0;
+  padding: 8px 10px;
+  box-sizing: border-box;
 }
 
 button {
   margin: 2px;
-  padding: auto;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+button:hover {
+  background-color: #e0e0e0;
 }
 
 input {
   width: 60px;
-  padding: 1px;
-  margin-right: 2px;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .pagination-btn {
@@ -142,26 +163,14 @@ input {
   justify-content: center;
   align-items: center;
   margin-top: 30px;
-  padding: auto;
   margin-bottom: 100px;
-}
-
-@media screen and (max-width: 768px) {
-  .navbar .logo {
-    margin-left: 4px;
-  }
-
-  .navbar .links {
-    margin-left: 18px;
-  }
-  .footer {
-    min-width: 420px;
-  }
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .progress-dashboard {
-  background: rgb(243, 248, 255);
-  margin: 0 38px 20px 38px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -176,18 +185,21 @@ input {
 
 .stats-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 15px;
+  gap: 10px;
 }
 
 .stat-box {
-  flex: 1;
+  flex: 1 1 calc(33.33% - 10px);
+  max-width: calc(33.33% - 10px);
   padding: 10px;
   text-align: center;
   background: white;
-  margin: 0 5px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }
 
 .stat-box:first-child {
@@ -223,4 +235,138 @@ input {
   background: linear-gradient(90deg, #51cf66, #339af0);
   border-radius: 6px;
   transition: width 0.3s ease;
+}
+
+.tip-filter-section {
+  margin-bottom: 20px;
+  padding-top: 0;
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.filter-controls label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.filter-controls input {
+  width: 60px;
+  padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 10px;
+    height: auto;
+  }
+
+  .navbar .logo {
+    font-size: 20px;
+  }
+
+  .navbar .links {
+    font-size: 14px;
+    margin-right: 30px;
+  }
+
+  .navbar .github-icon {
+    font-size: 20px;
+  }
+
+  .container {
+    padding-top: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .progress-dashboard,
+  .tip-filter-section,
+  .table-responsive {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .stat-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .table th,
+  .table td {
+    padding: 5px;
+    font-size: 13px;
+  }
+
+  .footer {
+    padding: 8px 10px;
+  }
+
+  .pagination-btn button {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .filter-controls input {
+    width: 45px;
+  }
+
+  .filter-controls button {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar .logo {
+    font-size: 18px;
+  }
+
+  .navbar .links {
+    font-size: 12px;
+    margin-right: 16px;
+  }
+
+  .navbar .github-icon {
+    font-size: 18px;
+  }
+
+  .container {
+    padding-top: 65px;
+  }
+
+  .progress-dashboard,
+  .tip-filter-section,
+  .table-responsive {
+      margin-left: 5px;
+      margin-right: 5px;
+  }
+
+  .table th,
+  .table td {
+    padding: 3px;
+    font-size: 11px;
+  }
+
+  .filter-controls input {
+    width: 35px;
+    padding: 3px;
+  }
+
+  .filter-controls button {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
 }
